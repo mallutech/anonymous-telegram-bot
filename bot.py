@@ -15,9 +15,11 @@ chats = {}
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     users[update.effective_user.id] = {"gender": None}
     reply_markup = ReplyKeyboardMarkup([["/gender male"], ["/gender female"]], one_time_keyboard=True, resize_keyboard=True)
-    await update.message.reply_text("Welcome to Anonymous Chat!
-Please select your gender:", reply_markup=reply_markup)
-
+    await update.message.reply_text(
+    """Welcome to Anonymous Chat!
+Please select your gender:""",
+    reply_markup=reply_markup
+)
 async def gender(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if len(context.args) != 1 or context.args[0] not in ["male", "female"]:
