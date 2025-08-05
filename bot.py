@@ -68,7 +68,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(chat_id=partner_id, text=update.message.text)
 
 def main():
-    app = ApplicationBuilder().token("8410384936:AAFmgv2Vv2UYKRoPWc7RX5l-05O0vk6lD0I").build()
+    app = ApplicationBuilder().uild()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("gender", gender))
